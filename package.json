@@ -1,0 +1,22 @@
+{
+  "name": "wepy-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx docsify serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlhandsome/wepy-docs.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dlhandsome/wepy-docs/issues"
+  },
+  "homepage": "https://github.com/dlhandsome/wepy-docs#readme",
+  "devDependencies": {
+    "docsify-cli": "^4.3.0"
+  }
+}
