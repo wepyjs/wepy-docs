@@ -88,6 +88,9 @@ Mustache 标签将会被替代为对应数据对象上 ```name``` 属性的值�
 
 ```vue
 <div v-on:tap="tapHandler"></div>
+
+<!-- or -->
+<div @tap="tapHandler"></div>
 ```
 
 - 使用 **原生小程序** 的方式
