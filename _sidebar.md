@@ -28,8 +28,8 @@
   - [路由](others/route.md)
   - [状态管理](others/state.md)
 
-- 编译器
+- CLI 工具
 
   - [介绍](cli/intro.md)
-  - [配置文件](cli/config.md)
+  - [编译配置文件](cli/config.md)
   - [插件](cli/plugin.md)
