@@ -4,9 +4,18 @@
 
 ## @wepy/x
 
-WePY 中使用的 Vuex 版本，可以使用 Vuex 的全部功能。详细文档可以参考：
+WePY 中使用的 Vuex 版本，可以使用 Vuex 的全部功能。
+
+Vuex 使用示例模板:
+```
+wepy init standard#2.0.x standard
+```
+
+详细文档参考：
 
 [@wepy/x](https://github.com/Tencent/wepy/tree/2.0.x/packages/x)
 
 [Vuex](https://vuex.vuejs.org/)
+
+
 
