@@ -40,8 +40,4 @@ wepy init standard#2.0.x myfolder
 wepy build -l trace
 ```
 
-## 编译配置文件
-
-在运行 `wepy build` 时会读取当前目录下的编译配置文件 `wepy.config.js`，文件可以通过 `wepy init` 根据模板初始化得到。
-
 
