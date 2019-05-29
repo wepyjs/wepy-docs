@@ -12,11 +12,11 @@
   - [表单绑定](base/form.md)
 
 - 组件
-
-  - [组件注册](component/register.md)
+  - [介绍](component/intro.md)
   - [Prop](component/prop.md)
   - [自定义事件](component/event.md)
   - [插槽](component/slot.md)
+  - [其它](component/others.md)
 
 - 可复用性 & 组合
 

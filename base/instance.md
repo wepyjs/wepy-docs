@@ -170,7 +170,7 @@ wepy.page({
 
 ### WePY 单文件组件
 
-WePY 单文件主要由组件由 <script>，<template>，<style>，<config> 四部分组成（也包括小程序 <wxs> 标签）。
+WePY 单文件组件主要由 ```<script>```，```<template>```，```<style>```，```<config>``` 四部分组成（也包括小程序 ```<wxs>``` 标签）。
 
 
 ### 页面实例
