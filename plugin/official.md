@@ -6,15 +6,188 @@
 
 ## compiler-babel
 
-[compiler-babel](https://github.com/Tencent/wepy/tree/2.0.x/packages/compiler-babel)插件：让代码进行 Babel  编译的插件，也是 WePY 2 当中 `<script>`的默认编译方式。
+---
+
+[compiler-babel](https://github.com/Tencent/wepy/tree/2.0.x/packages/compiler-babel) 插件：让代码进行 Babel  编译的插件，也是 WePY 2 当中 `<script>`的默认编译方式。
+
+### 安装
+
+```bash
+npm install @wepy/compiler-babel --save-dev
+```
+
+### 使用
+
+```javascript
+module.exports = {
+  compilers: {
+    babel: {
+      presets: [
+        'es2015',
+        'stage-1'
+      ],
+      plugins: [
+        'transform-export-extensions',
+        'syntax-export-extensions',
+        'transform-runtime'
+      ]
+    }
+  }
+};
+```
+
+### 参数说明
+
+[babel官方文档](https://github.com/babel/babel)
 
 ## compiler-typescript
+
+---
+
+[compiler-typescript](https://github.com/Tencent/wepy/tree/2.0.x/packages/compiler-typescript) 插件：让代码支持 ```Typescript```
+
+### 安装
+
+```bash
+npm install @wepy/compiler-typescript typescript --save-dev
+```
+
+### 使用
+
+```javascript
+const TypeScriptCompiler = require('@wepy/compiler-typescript');
+
+module.exports = {
+  "plugins": [
+    TypeScriptCompiler()
+  ]
+};
+```
+
+### 参数说明
+
+[Typescript官方文档](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
+
 ## compiler-less
+
+---
+
+### 安装
+
+```bash
+npm install @wepy/compiler-less less --save-dev
+```
+
+### 使用
+
+```javascript
+module.exports = {
+  compilers: {
+    less: {
+      compress: true
+    }
+  }
+};
+```
+
+### 参数说明
+
+[less 官方文档](https://github.com/less/less.js)
+
+
 ## compiler-sass
+
+---
+
+### 安装
+
+```bash
+npm install @wepy/compiler-sass --save-dev
+```
+
+### 使用
+
+```javascript
+module.exports = {
+  compilers: {
+    sass: {
+      outputStyle: 'compressed'
+    }
+  }
+};
+```
+
+### 参数说明
+
+[node sass](https://github.com/sass/node-sass)
+
+
 ## compiler-stylus
+
+---
+
+### 安装
+
+```bash
+npm install @wepy/compiler-stylus --save-dev
+```
+
+### 使用
+
+```javascript
+module.exports = {
+  compilers: {
+    stylus: {
+      compress: true
+    }
+  }
+};
+```
+
+### 参数说明
+
+[Stylus 官方文档](http://www.zhangxinxu.com/jq/stylus/js.php)
+
 ## compiler-postcss
 
+---
+
+### 安装
+
+```bash
+npm install @wepy/compiler-postcss --save-dev
+```
+
+### 说明
+
+配置 wepy.config.js ,以使用 cssnext 为例
+
+```javascript
+const cssnext = require('cssnext);
+
+module.exports = {
+  compilers: {
+    postcss: {
+      plugins: [
+        cssnext({
+          browsers:['iOS 9', 'Android 4.4']
+        })
+      ],
+      map: {
+        inline: true
+      }
+    },
+  }
+};
+```
+
+### 参数说明
+
+配置参数为 [processOptions](http://api.postcss.org/global.html#processOptions) 及 [plugins](http://api.postcss.org/global.html#Plugin)
+
 ## plugin-define
+
+---
 
 [plugin-define](https://github.com/Tencent/wepy/tree/2.0.x/packages/plugin-define)插件：可以在运行时的代码中定义一些常量，然后在编译阶段，这些常量会控预定的配置进行值被替换。
 
@@ -55,6 +228,8 @@ var url = http://www.foo.com
 因为我们需要使用 "'http://www.foo.com'" 或者 `JSON.stringify('http://www.foo.com')`
 
 ## plugin-uglify
+
+---
 
 [plugin-uglify](https://github.com/Tencent/wepy/tree/2.0.x/packages/plugin-uglifyjs)插件：使用 UglifyJS 对编译后的代码进行打混淆压缩。
 

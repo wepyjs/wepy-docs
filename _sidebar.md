@@ -30,7 +30,7 @@
 - 插件
   
   - [官方插件](plugin/official.md)
-  - [插件开发](plugin/devlopment.md)
+  - [插件开发](plugin/development.md)
 
 - CLI 工具
 
