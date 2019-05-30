@@ -11,7 +11,8 @@
 
 小程序的渲染层和逻辑层分别由2个线程管理：渲染层的界面使用了WebView 进行渲染；逻辑层采用JsCore线程运行JS脚本。一个小程序存在多个界面，所以渲染层存在多个WebView线程，这两个线程的通信会经由微信客户端（下文中也会采用Native来代指微信客户端）做中转，逻辑层发送网络请求也经由Native转发，小程序的通信模型下图所示
 
-![image](https://developers.weixin.qq.com/miniprogram/dev/image/quickstart/basic/4-1.png?t=19051421)
+![image](https://user-images.githubusercontent.com/16918885/58605198-90bf3c00-82c9-11e9-910c-1c3d1496f5bb.png)
+
 
 ### 程序与页面
 
