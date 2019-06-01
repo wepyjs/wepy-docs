@@ -1,7 +1,7 @@
 - 基础
 
   - [介绍](base/intro.md)
-  - [安装](base/install.md)
+  - [快速开始](base/getstart.md)
   - [WePY 实例](base/instance.md)
   - [模板语法](base/template.md)
   - [计算属性和侦听器](base/observe.md)
