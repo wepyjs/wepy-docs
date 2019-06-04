@@ -1,22 +1,9 @@
 # 列表渲染
 
-WePY 兼顾原生小程序语法与 Vue 绑定语法
+WePY 2 推荐使用 Vue `v-for` 指令进行列表渲染
 
-## 原生小程序语法
 
----
-
-```vue
-// example 01
-<div wx:for="{{array}}">{{index}}: {{item.message}}</div>
-
-// example 02
-<div wx:for="{{array}}" wx:for-index="idx" wx:for-item="itemName">
-  {{idx}}: {{itemName.message}}
-</div>
-```
-
-## Vue 绑定语法
+## WePY 推荐语法 
 
 ---
 
