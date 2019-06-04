@@ -24,13 +24,11 @@
 
 - 其它
 
-  - [路由](others/route.md)
   - [状态管理](others/state.md)
 
 - 插件
   
   - [官方插件](plugin/official.md)
-  - [插件开发](plugin/development.md)
 
 - CLI 工具
 
