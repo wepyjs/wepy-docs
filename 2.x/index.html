@@ -7,9 +7,49 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="../vendor/themes/vue.css">
+  <link rel="stylesheet" href="../css/document.css">
 </head>
 <body>
-  <div id="app"></div>
+  <div class="header">
+      <nav class="item">
+          <a href="../index.html">首页</a>
+      </nav>
+      <div class="item">
+        <div class="select-box">
+          <div class="select-box__current" tabindex="1">
+            <div class="select-box__value">
+              <input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked">
+              <p class="select-box__input-text">Cream</p>
+            </div>
+            <div class="select-box__value">
+              <input class="select-box__input" type="radio" id="1" value="2" name="Ben" checked="checked">
+              <p class="select-box__input-text">Cheese</p>
+            </div>
+            <div class="select-box__value">
+              <input class="select-box__input" type="radio" id="2" value="3" name="Ben" checked="checked">
+              <p class="select-box__input-text">Milk</p>
+            </div>
+            <div class="select-box__value">
+              <input class="select-box__input" type="radio" id="3" value="4" name="Ben" checked="checked">
+              <p class="select-box__input-text">Honey</p>
+            </div>
+            <div class="select-box__value">
+              <input class="select-box__input" type="radio" id="4" value="5" name="Ben" checked="checked">
+              <p class="select-box__input-text">Toast</p>
+            </div>
+            <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true">
+          </div>
+          <ul class="select-box__list">
+            <li> <label class="select-box__option" for="0" aria-hidden="aria-hidden">Cream</label> </li>
+            <li> <label class="select-box__option" for="1" aria-hidden="aria-hidden">Cheese</label> </li>
+            <li> <label class="select-box__option" for="2" aria-hidden="aria-hidden">Milk</label> </li>
+            <li> <label class="select-box__option" for="3" aria-hidden="aria-hidden">Honey</label> </li>
+            <li> <label class="select-box__option" for="4" aria-hidden="aria-hidden">Toast</label> </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <div id="app">Please wait...</div>
   <script>
     window.$docsify = {
       name: '',
@@ -20,5 +60,14 @@
     }
   </script>
   <script src="../vendor/docsify.js"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?14c98a4c2ac48bfa7a4c6e9bf797d125";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 </body>
 </html>
