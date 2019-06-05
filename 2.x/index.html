@@ -18,33 +18,18 @@
         <div class="select-box">
           <div class="select-box__current" tabindex="1">
             <div class="select-box__value">
-              <input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked">
-              <p class="select-box__input-text">Cream</p>
+              <input class="select-box__input v_2" type="radio" id="0" value="1" name="version" checked="checked">
+              <p class="select-box__input-text">2.x</p>
             </div>
             <div class="select-box__value">
-              <input class="select-box__input" type="radio" id="1" value="2" name="Ben" checked="checked">
-              <p class="select-box__input-text">Cheese</p>
-            </div>
-            <div class="select-box__value">
-              <input class="select-box__input" type="radio" id="2" value="3" name="Ben" checked="checked">
-              <p class="select-box__input-text">Milk</p>
-            </div>
-            <div class="select-box__value">
-              <input class="select-box__input" type="radio" id="3" value="4" name="Ben" checked="checked">
-              <p class="select-box__input-text">Honey</p>
-            </div>
-            <div class="select-box__value">
-              <input class="select-box__input" type="radio" id="4" value="5" name="Ben" checked="checked">
-              <p class="select-box__input-text">Toast</p>
+              <input class="select-box__input v_1" type="radio" id="1" value="2" name="version">
+              <p class="select-box__input-text">1.x</p>
             </div>
             <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true">
           </div>
-          <ul class="select-box__list">
-            <li> <label class="select-box__option" for="0" aria-hidden="aria-hidden">Cream</label> </li>
-            <li> <label class="select-box__option" for="1" aria-hidden="aria-hidden">Cheese</label> </li>
-            <li> <label class="select-box__option" for="2" aria-hidden="aria-hidden">Milk</label> </li>
-            <li> <label class="select-box__option" for="3" aria-hidden="aria-hidden">Honey</label> </li>
-            <li> <label class="select-box__option" for="4" aria-hidden="aria-hidden">Toast</label> </li>
+          <ul class="select-box__list" id="dropdown">
+            <li data-value="2.x"> <label class="select-box__option" for="0" aria-hidden="aria-hidden">2.x</label> </li>
+            <li data-value="1.x"> <label class="select-box__option" for="1" aria-hidden="aria-hidden">1.x</label> </li>
           </ul>
         </div>
       </div>
@@ -57,6 +42,23 @@
       loadSidebar: true,
       maxLevel: 4,
       subMaxLevel: 2,
+    }
+    window.docVersion = '2.x';
+    document.querySelector('input.v_1').checked = false;
+    document.querySelector('input.v_2').checked = true;
+    document.getElementById('dropdown').addEventListener('click', function (e) {
+      let target = e.target;
+      while (target.tagName.toUpperCase() !== 'LI')
+        target = target.parentNode;
+
+      let value = target.getAttribute('data-value');
+
+      if (value === '1.x') {
+        window.location.href = '/1.x/';
+      }
+    }, false);
+    function changeVersion (e) {
+      debugger;
     }
   </script>
   <script src="../vendor/docsify.js"></script>

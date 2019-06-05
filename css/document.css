@@ -27,6 +27,7 @@ body {
 }
 .header .item {
   margin: 0 30px 0 0;
+  width: 100px;
 }
 .sidebar {
   margin-top: 80px;
@@ -35,8 +36,6 @@ body {
 .content {
   margin-top: 80px;
 }
-
-
 .select-box {
   position: relative;
   display: block;
@@ -46,25 +45,6 @@ body {
   font-size: 18px;
   color: #60666d;
 }
-
-@media (min-width: 768px) {
-  .select-box {
-    width: 70%;
-  }
-}
-
-@media (min-width: 992px) {
-  .select-box {
-    width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .select-box {
-    width: 30%;
-  }
-}
-
 .select-box__current {
   position: relative;
   box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
@@ -76,11 +56,9 @@ body {
   opacity: 1;
   animation-name: none;
 }
-
 .select-box__current:focus + .select-box__list .select-box__option {
   cursor: pointer;
 }
-
 .select-box__current:focus .select-box__icon {
   transform: translateY(-50%) rotate(180deg);
 }
@@ -111,7 +89,7 @@ body {
   display: none;
   width: 100%;
   margin: 0;
-  padding: 15px;
+  padding: 10px;
   background-color: #fff;
 }
 
