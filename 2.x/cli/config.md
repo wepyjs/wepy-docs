@@ -143,7 +143,7 @@ modules.exports = {
 
 在 WePY 2 中，在检测到 `compilers` 属性后，会自动引入 `@wepy/compiler-${key}` 的插件。因此以上配置等价于：
 ```
-const BabelCompiler = require('@wepy/compiler-Babel');
+const BabelCompiler = require('@wepy/compiler-babel');
 const LessCompiler = require('@wepy/compiler-less');
 
 module.exports = {
