@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>WePY Document</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="../vendor/themes/vue.css">
-  <link rel="stylesheet" href="../css/document.css">
+    <meta charset="UTF-8">
+    <title>WePY Document</title>
+    <link rel="icon" href="favicon.ico">
+    <meta name="description" content="小程序组件化开发框架">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../vendor/themes/vue.css">
+    <link rel="stylesheet" href="../css/document.css">
 </head>
 <body>
   <div class="header">
@@ -36,17 +35,17 @@
       </div>
   </div>
   <div id="app">Please wait...</div>
-  <script>
+</body>
+<script>
     window.$docsify = {
-      name: '',
-      repo: '',
-      loadSidebar: true,
-      maxLevel: 4,
-      subMaxLevel: 2,
+      el: '#app',
+      auto2top: true,
+      basePath: './md/',
+      homepage: 'doc.md'
     }
     window.docVersion = '2.x';
-    document.querySelector('input.v_1').checked = false;
-    document.querySelector('input.v_2').checked = true;
+    document.querySelector('input.v_1').checked = true;
+    document.querySelector('input.v_2').checked = false;
     document.getElementById('dropdown').addEventListener('click', function (e) {
       let target = e.target;
       while (target.tagName.toUpperCase() !== 'LI')
@@ -54,20 +53,20 @@
 
       let value = target.getAttribute('data-value');
 
-      if (value === '1.x') {
-        window.location.href = '/1.x/';
+      if (value === '2.x') {
+        window.location.href = '/2.x/';
       }
     }, false);
-  </script>
-  <script src="../vendor/docsify.js"></script>
-  <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?14c98a4c2ac48bfa7a4c6e9bf797d125";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-</body>
+</script>
+<script src="//unpkg.com/docsify/lib/docsify.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14c98a4c2ac48bfa7a4c6e9bf797d125";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 </html>
