@@ -56,7 +56,7 @@ WePY (发音: /'wepi/) 项目启动于 2017 年 11 月份， 是小程序最早�
 <config>
 {
   usingComponents: {
-    mycomm: "@/components/some-component"
+    mycomm: "~@/components/some-component"
   }
 }
 </config>
