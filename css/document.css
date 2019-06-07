@@ -17,9 +17,8 @@ body {
   justify-content: flex-end;
   align-items: center;
   z-index: 999;
-  background: #fff;
+  background: #f7f7f7;
   padding-right: 100px;
-  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 .header .app-nav {
   position: static;
@@ -31,7 +30,6 @@ body {
 }
 .sidebar {
   margin-top: 80px;
-  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 .content {
   margin-top: 80px;
