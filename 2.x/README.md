@@ -1,4 +1,4 @@
-## WePY 2.0.x(alpha)
+## WePY 2 (alpha)
 
 [![npm version](https://badge.fury.io/js/wepy.svg)](https://badge.fury.io/js/wepy)
 [![travis-ci](https://travis-ci.org/Tencent/wepy.svg?branch=2.0.x)](https://travis-ci.org/Tencent/wepy)
