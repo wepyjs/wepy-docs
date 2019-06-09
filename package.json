@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx docsify serve ."
+    "start": "npx docsify serve .",
+    "test": "node ./test/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/dlhandsome/wepy-docs#readme",
   "devDependencies": {
-    "docsify-cli": "^4.3.0"
+    "docsify-cli": "^4.3.0",
+    "url-exists": "^1.0.3"
   }
 }
