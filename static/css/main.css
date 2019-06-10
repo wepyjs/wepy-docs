@@ -341,7 +341,15 @@ a.cases.islink {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
+  justify-content: flex-start;
+}
+.header__right {
+  display: flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  flex: 1;
 }
 .nav {
   display: -ms-flexbox;
