@@ -12,26 +12,32 @@
 </head>
 <body>
   <div class="header">
-      <nav class="item">
+      <div class="header__left">
+        <div class="logo"></div>
+        <div class="text"> WePY </div>
+      </div>
+      <div class="header__right">
+        <nav class="item">
           <a href="../index.html">首页</a>
-      </nav>
-      <div class="item">
-        <div class="select-box">
-          <div class="select-box__current" tabindex="1">
-            <div class="select-box__value">
-              <input class="select-box__input v_2" type="radio" id="0" value="1" name="version" checked="checked">
-              <p class="select-box__input-text">2.x</p>
+        </nav>
+        <div class="item">
+          <div class="select-box">
+            <div class="select-box__current" tabindex="1">
+              <div class="select-box__value">
+                <input class="select-box__input v_2" type="radio" id="0" value="1" name="version" checked="checked">
+                <p class="select-box__input-text">2.x</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input v_1" type="radio" id="1" value="2" name="version">
+                <p class="select-box__input-text">1.x</p>
+              </div>
+              <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true">
             </div>
-            <div class="select-box__value">
-              <input class="select-box__input v_1" type="radio" id="1" value="2" name="version">
-              <p class="select-box__input-text">1.x</p>
-            </div>
-            <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true">
+            <ul class="select-box__list" id="dropdown">
+              <li data-value="2.x"> <label class="select-box__option" for="0" aria-hidden="aria-hidden">2.x</label> </li>
+              <li data-value="1.x"> <label class="select-box__option" for="1" aria-hidden="aria-hidden">1.x</label> </li>
+            </ul>
           </div>
-          <ul class="select-box__list" id="dropdown">
-            <li data-value="2.x"> <label class="select-box__option" for="0" aria-hidden="aria-hidden">2.x</label> </li>
-            <li data-value="1.x"> <label class="select-box__option" for="1" aria-hidden="aria-hidden">1.x</label> </li>
-          </ul>
         </div>
       </div>
   </div>
@@ -43,6 +49,19 @@
       loadSidebar: true,
       maxLevel: 4,
       subMaxLevel: 2,
+      search: {
+        noData: {
+          '/de-de/': 'Keine Ergebnisse!',
+          '/zh-cn/': '没有结果!',
+          '/': 'No results!'
+        },
+        paths: 'auto',
+        placeholder: {
+          '/de-de/': 'Suche',
+          '/zh-cn/': '搜索',
+          '/': 'Search'
+        }
+      },
     }
     window.docVersion = '2.x';
     document.querySelector('input.v_1').checked = false;
@@ -60,6 +79,7 @@
     }, false);
   </script>
   <script src="../vendor/docsify.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script>
     var _hmt = _hmt || [];
     (function() {

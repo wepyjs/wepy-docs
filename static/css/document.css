@@ -14,11 +14,34 @@ body {
   height: 80px;
   border-bottom: 1px solid #EEE;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   z-index: 999;
   background: #f7f7f7;
-  padding-right: 100px;
+  padding: 0 60px;
+}
+.header .header__left{
+  display: flex;
+  align-items: center
+}
+.header .header__left .logo {
+  height: 52px;
+  width: 52px;
+  background-image: url(../img/logo-green.png);
+  background-size: 52px;
+  background-position: left;
+}
+.header .header__left .text {
+  margin-left: 10px;
+  font-size: 1.5em;
+  line-height: 40px;
+  color: #273849;
+  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+}
+.header .header__right {
+  display: flex;
+  align-items: center;
 }
 .header .app-nav {
   position: static;
@@ -30,6 +53,9 @@ body {
 }
 .sidebar {
   margin-top: 80px;
+}
+.sidebar .sidebar-nav {
+  padding-left: 20px;
 }
 .content {
   margin-top: 80px;
