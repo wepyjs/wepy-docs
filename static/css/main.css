@@ -165,7 +165,6 @@ a.cases.islink {
 }
 .container-wrap {
   z-index: 2;
-  margin-bottom: 160px;
   background-color: #F4F4F4;
   box-shadow: 0 0 30px 0 rgba(54, 69, 79, 0.86);
 }
@@ -709,7 +708,6 @@ li.social-link a {
   }
 }
 .footer {
-  position: fixed;
   width: 100%;
   bottom: 0;
   left: 0;
