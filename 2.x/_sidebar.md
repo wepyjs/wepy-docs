@@ -20,6 +20,7 @@
 - 可复用性 & 组合
 
   - [混入](extension/mixin.md)
+  - [Hook](extension/hook.md)
   - [插件](extension/plugin.md)
 
 - 其它
