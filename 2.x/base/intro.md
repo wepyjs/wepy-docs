@@ -35,3 +35,5 @@ WePY 2 并不是基于 WePY 1 作的版本升级，而是完全重新开发的�
 
 4. Vue 模板语法，WePY 2 中推荐使用 html 代替 wxml 来写 template，支持除 filter 之外的所有 Vue 模板语法。
 
+5. 编译方式改变，WePY 2 从基于文件编译调整为基于入口编译，因此对于图片等静态资源需要指定 [static 选项](https://wepyjs.github.io/wepy-docs/2.x/#/cli/config?id=static) 。
+
