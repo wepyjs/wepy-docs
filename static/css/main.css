@@ -994,15 +994,26 @@ li.social-link a {
   border-radius: 8px;
   box-shadow: 0 24px 80px -2px #067a1f !important;
   transition: box-shadow 1s;
-  position: relative;
+  position: absolute;
   margin: 50px auto;
   width: 90%;
   padding: 20px;
-  max-width: 380px;
-  text-align: center;
+  max-width: 200px;
+  text-align: left;
   font-weight: bold;
   background-color: #f6f6f6;
   cursor: initial;
+}
+
+.modal-container .qr-modal .info .tips {
+  margin-bottom: 10px;
+}
+.modal-container .qr-modal .row {
+  display: flex;
+}
+
+.modal-container .qr-modal .row .title {
+  width: 100px;
 }
 .slides {
   display: -ms-flexbox;

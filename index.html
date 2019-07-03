@@ -234,11 +234,23 @@
         </div>
     </div>
     <div class="modal-container" :class="isQrShow ? 'active' : ''" @click="modalClick">
-            <div class="qr-modal">
-                <div style="padding: 10px;">
-                    我们是完全开源的，任何人都可以免费投稿。WePY 交流群已满500人，请加 gcaufy_helper 好友或者扫码加好友，验证回复 wepy 按照指引进群。
-                </div>
+            <div class="qr-modal" :style="{left: qrLeft, top: qrTop}">
+                
                 <img style="width: 200px;" src="./static/img/qrcode.png">
+                <hr />
+                <div class="info">
+                  <div class="tips">
+                    验证回复 wepy 按照指引进群。
+                  </div>
+                  <div class="row">
+                     <div class="title">总群人数:</div>
+                     <div class="value">{{groupUser}}</div>
+                  </div>
+                  <div class="row">
+                     <div class="title">最后更新于:</div>
+                     <div class="value">{{updateAt}}</div>
+                  </div>
+                </div>
             </div>
     </div>
 </div>
@@ -289,6 +301,10 @@
       textCases: [],
       rollCases: [],
       isQrShow: false,
+      qrLeft: "",
+      qrTop: "",
+      groupUser: "数据获取中...",
+      updateAt: "数据获取中...",
       gists: [{
         id: 1,
         title: '原生代码 index.js',
@@ -388,10 +404,23 @@ export default class Index extends wepy.page {
           });
         }
       });
+
+      axios.get('./db/GROUP_USER').then(function (res) {
+        if (res && res.data) {
+          self.groupUser = res.data;
+        }
+      });
+      axios.get('./db/UPDATE_AT').then(function (res) {
+        if (res && res.data) {
+          self.updateAt = res.data;
+        }
+      });
     },
     methods: {
-        wxEnter: function () {
+        wxEnter: function (e) {
             this.isQrShow = true
+            this.qrLeft = e.pageX - 240 + 'px';
+            this.qrTop = e.pageY - 40 + 'px';
         },
         modalClick: function () {
             this.isQrShow = false
