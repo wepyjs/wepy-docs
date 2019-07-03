@@ -1,6 +1,6 @@
 ## WePY 2 (alpha)
 
-[![npm version](https://badge.fury.io/js/wepy.svg)](https://badge.fury.io/js/wepy)
+[![npm version](https://badge.fury.io/js/%40wepy%2Fcore.svg)](https://badge.fury.io/js/%40wepy%2Fcore)
 [![travis-ci](https://travis-ci.org/Tencent/wepy.svg?branch=2.0.x)](https://travis-ci.org/Tencent/wepy)
 [![Coverage Status](https://coveralls.io/repos/github/Tencent/wepy/badge.svg?branch=2.0.x)](https://coveralls.io/github/Tencent/wepy?branch=2.0.x)
 [![Dependency Status](https://david-dm.org/Tencent/wepy.svg)](https://david-dm.org/Tencent/wepy)
