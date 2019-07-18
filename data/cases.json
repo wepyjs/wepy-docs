@@ -4,6 +4,14 @@
     " */": "****",
     "cases": [
         {
+            "name": "自律帝(wxcms)",
+            "email": "121258121@qq.com",
+            "link": "",
+            "opensource": "https://github.com/yizenghui/wxcms",
+            "qrcode": "https://user-images.githubusercontent.com/2182004/61427129-9e9b5000-a94f-11e9-911b-d62383ebc517.png",
+            "company": ""
+        },
+        {
             "name": "极简记账",
             "email": "sage.gu.au@gmail.com",
             "link": "https://fangnu.fun",
