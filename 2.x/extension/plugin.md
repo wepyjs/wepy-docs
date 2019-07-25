@@ -35,6 +35,12 @@ wepy.use(MyPlugin, { someOption: true })
 
 ```wepy.use``` 会自动阻止多次注册相同插件，届时即使多次调用也只会注册一次该插件。
 
+## 可用插件
+
+* Promisify：[@wepy/use-promisify](https://github.com/Tencent/wepy/tree/2.0.x/packages/use-promisify)
+* Vuex 状态管理：[@wepy/x](https://github.com/Tencent/wepy/tree/2.0.x/packages/x)
+* Redux 状态管理：[@wepy/redux](https://github.com/Tencent/wepy/tree/2.0.x/packages/redux)
+
 ## 开发插件
 
 ---
