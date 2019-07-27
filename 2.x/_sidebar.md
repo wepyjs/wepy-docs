@@ -23,10 +23,6 @@
   - [Hook](extension/hook.md)
   - [插件](extension/plugin.md)
 
-- 其它
-
-  - [状态管理](others/state.md)
-
 - 插件
   
   - [官方插件](plugin/official.md)
