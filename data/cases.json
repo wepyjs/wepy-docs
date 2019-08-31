@@ -3,6 +3,14 @@
     " * 请在填写cases之前查看这里": "https://github.com/Tencent/wepy/tree/master/docs/data#%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B-pr-%E8%AF%B4%E6%98%8E",
     " */": "****",
     "cases": [
+         {
+            "name": "龙猫游",
+            "email": "lipingin2009@gmail.com",
+            "link": "http://www.longmaoyou.com/",
+            "opensource": "",
+            "qrcode": "https://user-images.githubusercontent.com/10140473/63748189-78b48400-c8db-11e9-85b0-09c761a7bb5c.png",
+            "company": "深圳市龙腾捷旅科技股份有限公司"
+        },
         {
             "name": "自律帝(wxcms)",
             "email": "121258121@qq.com",
