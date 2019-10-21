@@ -12,7 +12,7 @@ cases.forEach(item => {
   if (item.qrcode) {
     totalCount++;
     urlExists(item.qrcode, function (err, exists) {
-      assert.ok(exists, `"${item.name}" is not avaliable.`);
+      assert.ok(exists, `"${item.name}" is not avaliable. Please check cases/data.json`);
       // console.log(`"${item.name}" QR code avaliable.`);
       avaliableCount++;
 
