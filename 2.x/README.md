@@ -56,7 +56,7 @@ WePY (发音: /'wepi/) 项目启动于 2017 年 11 月份， 是小程序最早�
 <config>
 {
   usingComponents: {
-    mycomm: "~@/components/some-component"
+    mycom: "~@/components/some-component"
   }
 }
 </config>
@@ -164,6 +164,6 @@ GitHub掘金版、
 
 [Changelog](https://tencent.github.io/wepy/document.html#/changelog)
 
-[Contributing](./CONTRIBUTING.md)
+[Contributing](https://github.com/Tencent/wepy/blob/2.0.x/CONTRIBUTING.md)
 
-[License MIT](./LICENSE)
+[License MIT](https://github.com/Tencent/wepy/blob/2.0.x/LICENSE)
