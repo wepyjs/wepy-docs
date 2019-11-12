@@ -126,7 +126,7 @@ module.exports = {
 
 ---
 
-### 安装
+### 安装
 
 ```bash
 npm install @wepy/compiler-stylus --save-dev
