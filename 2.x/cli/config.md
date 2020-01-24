@@ -55,6 +55,15 @@ module.exports = {
 
 指定静态资源目录，多个目录用数组表示。编译时会将目录文件拷贝至 `output` 的目录中。对于图片等静态资源，需要使用此选项才可以将其拷贝过去。 
 
+示例：
+```
+{
+  ...
+  static: [ 'src/static' ]
+  ...
+}
+```
+
 ## resolve 
 
 自定义模块解析规则，可以查看 `Webpack` 的 [Resolve](https://webpack.js.org/configuration/resolve/#root) 文档查看使用方法。
