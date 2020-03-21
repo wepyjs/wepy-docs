@@ -8,6 +8,7 @@
 小程序原生的[事件系统](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html) 使用`bind`，`catch` 等关键字进行事件监听。
 而在 WePY 中，事件沿用了 Vue 的风格，使用 `v-on` 或者是 `@` 操作符进行事件监听。同时 WePY 中会有一个统一的事件分发器接管原生事件。大致如下图：
 
+![事件原理](https://user-images.githubusercontent.com/2182004/77230304-3a134d80-6bce-11ea-8757-8530612ecf2d.png)
 
 WePY 在编译过程中，会找到所有监听事件，并为其分配事件 ID。同时将事件代码（可以是一个方法，也可以是一个简单的代码片段）注入至 JS 代码中。
 然后当事件分发器接收到原生事件时，会通过事件 ID，分发到相应的事件逻辑当中。
