@@ -1,90 +1,147 @@
-# 自定义事件
+# 组件自定义事件
 
-用法与 Vue 一致，参考 [vue官方文档](https://cn.vuejs.org/v2/guide/components-custom-events.html)
+在小程序原生中，使用 `bind:customevent` 进行事件绑定，使用 `wx.triggerEvent` 触发组件的自定义事件。
+而在 WePY 中，还原了 Vue 的实用场景，使用 `v-on` 或 `@` 进行事件绑定，使用 `$emit` 触发组件自定义事件。
 
-!> 暂不支持 自定义组件的 ```v-model```
+WePY 中有自己的事件订阅与发布机制，当使用 `$emit` 作用于自定义组件事件时，会基于 `wx.trggerEvent` 实现对自定义组件的兼容，并且具备更加灵活的使用方式。
+在 WePY 的组件自定义事件中，你不仅可以在监听事件时传递参数，也可以在触发事件时传递参数。
 
-## stop 修饰符
+示例：
 
----
-
-**作用：**中断触摸类事件捕获阶段和取消冒泡阶段
-
-在下边这个例子中，点击 inner view 会先后调用 ```handleTap3``` 和 ```handleTap2``` (因为tap事件会冒泡到 middle view，而 middle view 阻止了 tap 事件冒泡，不再向父节点传递)，点击 middle view 会触发 ```handleTap2```，点击 outer view 会触发 ```handleTap1```。
-
-```vue
-<div id="outer" @tap="handleTap1">
-  outer view
-  <div id="middle" @tap.stop="handleTap2">
-    middle view
-    <div id="inner" @tap="handleTap3">
-      inner view
-    </div>
+```
+<template>
+  <!-- parent component -->
+  <my-comp @custom-event="handler"></my-comp>
+  <my-comp @custom-event="handlerWithArg('myarg', arguments)"></my-comp>
+  <my-comp @custom-event="handlerWithArg('myarg', $event, arguments, $wx)"></my-comp>
+  <div v-for="(item, index) in list">
+    <my-comp @custom-event="handlerInFor('myarg', item, index, arguments)"></my-comp>
   </div>
-</div>
+</template>
+<script>
+  import wepy from '@wepy/core';
+  wepy.page({
+    data: {
+      list: [{id: 1, name: 'item1'}] 
+    },
+    methods: {
+      handler() {
+        // do something 
+      },
+      handlerWithArgs(p1, p2) {
+        console.log(p1, p2); // "myarg", [1, 2, 3]
+      },
+      handlerWithAll(p1, p2, p3, p4) {
+        console.log(p1, p2, p3, p4) // "myarg", 1, [1, 2, 3], event
+      },
+      handlerInFor(p1, p2, p3, p4) {
+        console.log(p1, p2, p3, p4) // "myarg", {id: 1, name: 'item1'}, [1, 2, 3], event
+      }
+    }
+  })
+</script>
 
+<template>
+  <!-- child component -->
+  <button @tap="click">Click</button>
+</template>
+<script>
+  import wepy from '@wepy/core';
+  wepy.component({
+    methods: {
+      click() {
+        this.$emit('custom-event', 1, 2, 3); 
+      }
+    }
+  })
+</script>
 ```
 
-## capture 修饰符
+> WePY 中，不推荐使用 `triggerEvent` 进行事件触发，也不推荐从 event.detail 中获取参数。请直接使用不定参传递的方式，以及使用特殊参数来获取传递的参数。
+> 使用 $emit 触发自定义事件时，不支持自定义 `triggerEvent` 的第三个参数，如果需要自定义此参数，可以使用 `this.$trigger(eventName, params, eventOption)` 来实现，并且取参方式与 $emit 保持一致。
 
----
 
-**作用：**触摸类事件支持捕获阶段
+## 特殊参数
 
-捕获阶段位于冒泡阶段之前，且在捕获阶段中，事件到达节点的顺序与冒泡阶段恰好相反。需要在捕获阶段监听事件时，可以采用 ```.capture```、```.capture.catch``` 修饰符，后者将中断捕获阶段和取消冒泡阶段。
+在监听自定义组件时，会提供一些特殊参数，用于不同的场景。
 
-在下面的代码中，点击 inner view 会先后调用 ```handleTap2```、```handleTap4```、```handleTap3```、```handleTap1```。
+### arguments
 
-```vue
-<div id="outer" @touchstart="handleTap1" @touchstart.capture="handleTap2">
-  outer view
-  <div id="inner" @touchstart="handleTap3" @touchstart.capture="handleTap4">
-    inner view
-  </div>
-</div>
-```
+此参数用于获取子组件 $emit 时，所传递的参数。参数实际绑定在 `$event.$wx.$detail.arguments` 中，但你不需要关心。只需要通过函数参数获取即可。
 
-如果将上面代码中的第一个 ```capture``` 后面加一个 ```catch``` 修饰符，将只触发 ```handleTap2```。
 
-```vue
-<div id="outer" @touchstart="handleTap1" @touchstart.capture.catch="handleTap2">
-  outer view
-  <div id="inner" @touchstart="handleTap3" @touchstart.capture="handleTap4">
-    inner view
-  </div>
-</div>
-```
-
-## wxs 修饰符
-
----
-
-**作用：**使用WXS函数响应事件
-
-> 小程序基础库 2.4.4 开始支持，低版本需做兼容处理
-
-```wxs``` 响应事件的背景及实现方案，参考 [小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/view/interactive-animation.html)
-
-```vue
-<wxs module="test" src="./test.wxs"></wxs>
-<div change:prop="{{test.propObserver}}" :prop="propValue" @touchmove.wxs="test.touchmove" class="movable"></div>
+示例:
 
 ```
+<template>
+  <!-- parent component -->
+  <my-comp @custom-event="handlerWithArg('myarg', arguments)"></my-comp>
+</template>
+<script>
+  import wepy from '@wepy/core';
+  wepy.page({
+    methods: {
+      // 子组件传递了三个参数，会以数组形式传递到 arguments 处
+      handlerWithArgs(p1, p2) {
+        console.log(p1, p2); // "myarg", [1, 2, 3]
+      }
+    }
+  })
+</script>
 
-上面的 ```change:prop```（属性前面带 ```change:``` 前缀）是在 prop 属性被设置的时候触发 WXS 函数，值必须用{{}}括起来。在 ```propValue``` 值发生变化之后会触发。
 
-!>当 prop 属性的值被设置 WXS 函数就会触发，而不只是值发生改变，所以在页面初始化的时候会调用一次 WXS 中 ```propObserver``` 的函数。
+<!-- child component 同上 -->
+<!-- this.$emit('custom-event', 1, 2, 3); -->
+```
 
-WXS 文件 ```test.wxs``` 里面定义并导出事件处理函数和属性改变触发的函数：
+### $event
 
-```javascript
-module.exports = {
-  touchmove: function(event, instance) {
-    console.log('log event', JSON.stringify(event))
-  },
-  propObserver: function(newValue, oldValue, ownerInstance, instance) {
-    console.log('prop observer', newValue, oldValue)
-  }
-}
+此参数用于获取子组件 $emit 所传递的第一个参数。此处是为了与 Vue 的形为保持一致，因 Vue 的自定义组件属于纯代码封装事件，不存在原生 Web 事件。因此，此时 $event 获取 $emit 第一个参数。
 
+示例:
+
+```
+<template>
+  <!-- parent component -->
+  <my-comp @custom-event="handler('myarg', $event)"></my-comp>
+</template>
+<script>
+  import wepy from '@wepy/core';
+  wepy.page({
+    methods: {
+      // 子组件传递了三个参数，会以数组形式传递到 arguments 处
+      handler(p1, p2) {
+        console.log(p1, p2); // "myarg", 1
+      }
+    }
+  })
+</script>
+
+<!-- child component 同上 -->
+<!-- this.$emit('custom-event', 1, 2, 3); -->
+```
+
+### $wx
+
+此参数用于获取小程序原生 event。原生小程序在触发自定义事件时。会产生一个 event。使用此参数可获取
+
+```
+<template>
+  <!-- parent component -->
+  <my-comp @custom-event="handler('myarg', $wx)"></my-comp>
+</template>
+<script>
+  import wepy from '@wepy/core';
+  wepy.page({
+    methods: {
+      // 子组件传递了三个参数，会以数组形式传递到 arguments 处
+      handler(p1, p2) {
+        console.log(p1, p2); // "myarg", event
+      }
+    }
+  })
+</script>
+
+<!-- child component 同上 -->
+<!-- this.$emit('custom-event', 1, 2, 3); -->
 ```
