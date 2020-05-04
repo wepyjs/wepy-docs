@@ -4,6 +4,14 @@
     " */": "****",
     "cases": [
          {
+            "name": "愚公学堂",
+            "email": "webbdang@163.com",
+            "link": "",
+            "opensource": "",
+            "qrcode": "",
+            "company": ""
+         },
+         {
             "name": "龙猫游",
             "email": "lipingin2009@gmail.com",
             "link": "http://www.longmaoyou.com/",
