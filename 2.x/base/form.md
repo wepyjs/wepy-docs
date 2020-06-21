@@ -1,8 +1,8 @@
 # 表单输入绑定
 v-model 本质上是语法糖，它会根据控件类型自动选取正确的方法来更新元素
-- input 和 textarea 元素使用 value 作为 prop 并将 input 作为事件；
-- picker，checkbox-group，radio-group 元素将使用 value 作为 prop 并将 change 作为事件。
-- switch 元素将使用 checked 作为 prop 并将 change 作为事件。
+- input 和 textarea 元素使用 value 作为 prop ，并通过 input 事件触发 v-model 属性值的更新。
+- picker，checkbox-group，radio-group 元素将使用 value 作为 prop ，并通过 change 事件触发 v-model 属性值的更新。
+- switch 元素将使用 checked 作为 prop ，并通过 change 事件触发 v-model 属性值的更新。
 
 ## 基础用法
 ### 输入框 input
@@ -73,9 +73,9 @@ wepy.page({
 ```vue
 <radio-group v-model="radiomodel">
     <label>
-        <view>
+        <div>
             <radio value="美国"></radio>
-        </view>
+        </div>
     </label>
 </radio-group>
 <script>
@@ -94,9 +94,9 @@ wepy.page({
 ```vue
 <checkbox-group v-model="checkboxmodel">
     <label>
-        <view>
+        <div>
             <checkbox value="美国"></checkbox>
-        </view>
+        </div>
     </label>
 </checkbox-group>
 <script>
