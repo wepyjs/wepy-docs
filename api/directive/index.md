@@ -140,7 +140,7 @@
 ```
 
 ## v-model
-- 限制：
+- 限制(可使用的原生组件)：
   - input
   - textarea
   - picker

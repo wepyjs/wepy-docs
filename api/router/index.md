@@ -7,16 +7,32 @@
 - 类型：`string | {Object} options`
 - 用法：
 ```
-this.$launch('/page/home/home')
+this.$launch('/page/home/home', {
+    type: 'wepy'
+})
+// 也可以使用
+this.$launch({
+    url: '/page/home/home?type=wepy',
+    fail: () => {},
+    success: () => {}
+})
 ```
 
 # $navigate
-保留当前页面，跳转到应用内的某个页面。但是不能跳到 tabbar 页面。使用 Taro.navigateBack 可以返回到原页面。小程序中页面栈最多十层。
+保留当前页面，跳转到应用内的某个页面。但是不能跳到 tabbar 页面。使用 this.$back 可以返回到原页面。小程序中页面栈最多十层。
 
 - 类型：`string | {Object} options`
 - 用法：
 ```
-this.$navigate('/page/home/home')
+this.$navigate('/page/home/home', {
+    type: 'wepy'
+})
+// 也可以使用
+this.$navigate({
+    url: '/page/home/home?type=wepy',
+    fail: () => {},
+    success: () => {}
+})
 ```
 
 # $redirect
@@ -25,7 +41,15 @@ this.$navigate('/page/home/home')
 - 类型：`string | {Object} options`
 - 用法：
 ```
-this.$redirect('/page/home/home')
+this.$redirect('/page/home/home', {
+    type: 'wepy'
+})
+// 也可以使用
+this.$redirect({
+    url: '/page/home/home?type=wepy',
+    fail: () => {},
+    success: () => {}
+})
 ```
 
 # $back
