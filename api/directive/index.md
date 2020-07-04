@@ -22,7 +22,7 @@
 ## v-on
 - 缩写：`@`
 
-- 预期：`Function | Inline Statement | Object`
+- 预期：`Function | Inline Statement | wxs Function | Object`
 
 - 参数：`event`
 
@@ -30,6 +30,7 @@
   - `stop`: 阻止事件向上冒泡, 等同于 `catch`
   - `capture`: 中断捕获，等同于 `capture-bind`
   - `stop.capture`: 中断捕获阶段和取消冒泡阶段, 等同于 `capture-catch`
+  - `wxs`: [wxs 响应事件](https://developers.weixin.qq.com/miniprogram/dev/framework/view/interactive-animation.html)
 - 用法：
 
 绑定事件监听器。事件类型由参数指定。表达式可以是一个方法的名字或一个内联语句，如果没有修饰符也可以省略。
