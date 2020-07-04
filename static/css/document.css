@@ -50,6 +50,12 @@ body {
 .header .item {
   margin: 0 30px 0 0;
   width: 100px;
+  text-decoration: none;
+}
+.header .item  a {
+  color: #34495e;
+  text-decoration: none;
+  font-size: 16px;
 }
 .sidebar {
   margin-top: 80px;

@@ -190,11 +190,13 @@ WePY 单文件组件主要由 ```<script>```，```<template>```，```<style>```�
 | onPageScroll | onPageScroll | 同上 |
 | onResize | onResize | 同上 |
 | onTabItemTap | onTabItemTap | 同上 |
+| onAddToFavorites | onAddToFavorites | 同上 |
 | - | created | 参看[官方文档 Component](https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html) |
 | - | attached | 同上 |
 | - | ready | 同上 |
 | - | moved | 同上 | 
 | - | detached | 同上 |
+| - | error | 同上 |
 
 ### 组件生命周期
 
@@ -210,7 +212,7 @@ wepy component 实例生命周期与原生小程序的 **组件生命周期** �
 | ready | ready | 同上 |
 | moved | moved | 同上 | 
 | detached | detached | 同上 |
-
+| error | error | 同上 |
 
 ### 生命周期函数补充与修改
 
