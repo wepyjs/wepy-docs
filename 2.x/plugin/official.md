@@ -236,12 +236,12 @@ var url = http://www.foo.com
 ### 使用
 
 ```
-const PluginUglifyjs = require('@wepy/plugin-uglifyjs');
+const UglifyPlugin = require('@wepy/plugin-uglifyjs');
 
 module.exports = {
   ...
   plugins: [
-    PluginUglifyjs({
+    UglifyPlugin({
       // options
     })
   ]
