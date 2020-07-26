@@ -311,9 +311,9 @@
         lang: 'language-js',
         style: '',
         code: `
-import wepy from 'wepy';
+import wepy from '@wepy/core';
 
-export default class Index extends wepy.page {
+wepy.page ({
     getData() {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -326,44 +326,44 @@ export default class Index extends wepy.page {
       let data = await this.getData();
       console.log(data.data);
     };
-}`
+})`
     }, {
         id: 2,
         title: `index.wpy 中的 <script> 部分`,
         lang: 'language-js',
         style: '',
         code: `
-import wepy from 'wepy';
+import wepy from '@wepy/core';
 
 // 通过继承自wepy.page的类创建页面逻辑
-export default class Index extends wepy.page {
+wepy.page ({
     //可用于页面模板绑定的数据
-    data = {
+    data: {
       motto: 'Hello World',
       userInfo: {}
-    };
+    },
 
     //事件处理函数(集中保存在methods对象中)
-    methods = {
+    methods: {
       bindViewTap () {
         console.log('button clicked');
       }
-    };
+    },
 
     //页面的生命周期函数
     onLoad () {
       console.log('onLoad');
     };
-}`
+})`
     }, {
         id: 3,
         title: `支持ES6/7的一些新特性`,
         lang: 'language-js',
         style: '',
         code: `
-import wepy from 'wepy';
+import wepy from '@wepy/core';
 
-export default class Index extends wepy.page {
+wepy.page ({
     getData() {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -376,7 +376,7 @@ export default class Index extends wepy.page {
       let data = await this.getData();
       console.log(data.data);
     };
-}`
+})`
     }]
     },
     created: function () {
