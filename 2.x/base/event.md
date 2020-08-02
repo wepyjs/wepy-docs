@@ -13,7 +13,7 @@
 WePY 在编译过程中，会找到所有监听事件，并为其分配事件 ID。同时将事件代码（可以是一个方法，也可以是一个简单的代码片段）注入至 JS 代码中。
 然后当事件分发器接收到原生事件时，会通过事件 ID，分发到相应的事件逻辑当中。
 
-这样做好好处主要是：
+这样做的好处主要是：
 
 1. 可控性更强。用户可利用相关钩子函数从而处理全局的用户事件。（典型场景：为页面全部按钮统一增加一个点击上报功能）
 2. 灵活度更高。相对于原生只能使用函数名的方式来说，还可使用简单代码片段。（典型场景：@tap="num++"）
@@ -30,10 +30,10 @@ WePY 不仅可以支持到响应事件监听，也可以支持到像 Web 原生�
   <button @tap="num =+ 1">Counter - {{num}}</button> 
 
   <!-- 类原生方式，使用事件函数响应事件 -->
-  <button @tap="handler">Handle my event></button>
+  <button @tap="handler">Handle my event</button>
 
   <!-- 类Vue方式，原生不支持携带参数 -->
-  <button @tap="handlerWithArgs(1, 2)">Handle my event with arguments></button>
+  <button @tap="handlerWithArgs(1, 2)">Handle my event with arguments</button>
 </template>
 <script>
 import wepy from '@wepy/core';
